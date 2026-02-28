@@ -12,4 +12,4 @@ ENV NVM_DIR=/root/.nvm
 RUN bash -c "source $NVM_DIR/nvm.sh && nvm install 22"
 
 # Now install Gemini CLI globally using npm
-RUN bash -c "source ~/.bashrc &&npm install -g @google/gemini-cli"
+RUN bash -c "source ~/.bashrc && npm install -g @google/gemini-cli@0.31.0"
