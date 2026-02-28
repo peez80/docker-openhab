@@ -32,6 +32,6 @@ jobs:
       with:
         platforms: linux/amd64,linux/arm64
         push: true
-        tags: peez/openhab:2.0-OH-${{ steps.oh_tag.outputs.oh_tag }}
+        tags: peez/openhab:2.1-OH-${{ steps.oh_tag.outputs.oh_tag }}
         build-args: |
           OH_TAG=${{ steps.oh_tag.outputs.oh_tag }}
