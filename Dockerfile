@@ -4,7 +4,9 @@ RUN apt-get clean && apt-get update \
     && apt-get install -y iputils-ping mosquitto-clients openssh-client docker.io \
     && apt-get autoremove
 
-RUN groupadd docker && usermod -aG docker openhab
+# Create openhab user if it doesn't exist and add to docker group
+RUN id openhab >/dev/null 2>&1 || useradd -m -u 9001 -s /bin/bash openhab
+RUN usermod -aG docker openhab
 
 
     #Skip installing gemini, as it will be called via docker-outside-docker
