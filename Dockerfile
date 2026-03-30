@@ -4,6 +4,8 @@ RUN apt-get clean && apt-get update \
     && apt-get install -y iputils-ping mosquitto-clients openssh-client docker.io \
     && apt-get autoremove
 
+RUN groupadd docker && usermod -aG docker openhab
+
 
     #Skip installing gemini, as it will be called via docker-outside-docker
 # Set up Node for Gemini CLI
